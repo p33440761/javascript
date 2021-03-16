@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //parseInt()可以傳回由字串轉換而成的整數。 只看前面是數字 不認英文
+        console.log(parseInt("123 abc"));         //123
+        console.log(parseInt("abc 123"));         //NaN
+        console.log(parseInt("123abc"));            //123
+        console.log(typeof ("abc 123"))
+
+
+        //parseFloat()可以傳回由字串轉換而成的浮點數。
+        //parseFloat 會傳回一個在String 中之的數值。
+        console.log(parseFloat("10.68"));         //傳回 10.68
+        console.log(parseFloat("123 abc"));       //123
+        console.log(parseFloat("abc 123"));       //NaN
+        console.log(parseFloat("abc123"));       //NaN
+        console.log(parseFloat("123abc"));       //123
+
+        //Number() 可以將物件轉化成數值。
+        console.log(Number("123 abc"));            //NaN
+        console.log(Number("123"));                 //123
+        console.log(Number("123 456"));                 //NaN
+    </script>
+</body>
+
+</html>
