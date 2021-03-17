@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        for (let i = 1; i < 10; i++) {
+            for (let j = 1; j < 10; j++) {
+
+                // j 為 4 的時候，只跳出內部迴圈，
+                //但外部迴圈依然會繼續執行，
+                //內層break 只影響內層break
+                //外層break 影響外層break
+                if (j == 4) break;
+                console.log(`i = ${i}, j = ${j}`)
+                //在j這個迴圈裡 所以可以讀得到j
+
+
+            }
+
+
+            // console.log(`i = ${i}, j = ${j}`)
+            //不能放在這是因為它不在j的迴圈裡 不認得j 尤其適用let 如果用var就可以 因為是全域變數
+
+        }
+    </script>
+</body>
+
+</html>

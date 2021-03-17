@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p class="myClass">問世間，</p>
+    <p class="myClass">情是何物，</p>
+    <p class="myClass">直教生死相許。</p>
+
+    <script>
+        //此時的p是一個陣列 可以用[]索引去選擇出要指定的p
+        let p = document.querySelectorAll('p');
+        p[0].style.background = '#7878ff';
+        p[2].style.fontSize = '48px';
+        p[2].style.border = '8px solid #ccc';
+        p[1].innerHTML = '<span style="color: #00ff00">...情是何物...</span>';
+    </script>
+</body>
+
+</html>
