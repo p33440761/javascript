@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //i 為 4 的時候略過，直接往下一個 i (即是 5) 繼續執行
+        for (let i = 1; i <= 9; i++) {
+            if (i == 4) { continue; }//continue 下一行就不執行了 直接跳到下一個i繼續做迴圈 
+            console.log(`i = ${i}`);//i = 4不執行這行console 跳到下一個 i = 5 繼續做迴圈
+        }
+    </script>
+</body>
+
+</html>
