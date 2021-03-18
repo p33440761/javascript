@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            fname: 'Darren',
+            lname: 'Yang',
+            age: null,
+            lineId: 'telunyang'
+        };
+
+        // object 沒有序 故不能用of 取得值
+        // for/in可以查看 Object 類型物件的屬性和 屬性 值
+        //in 是取dictionary 的key 不取value 要取值
+        // 要用console.log(`${obj[attr]}`)
+
+        for (let attr in obj) {
+
+            // console.log(`${attr}`)  //取得物件的屬性key
+
+
+            // console.log(`${obj[attr]}`) //取得物件的屬性值
+
+
+            console.log(`${obj['fname']}`) //取得物件的值
+
+
+        }
+
+        // let arr = ['a', 'b', 'c']; //陣列
+
+        // for (let value in arr) {
+        //     console.log(`${value}`)
+        // }
+
+        //of 後面需要有序的索引 [0] [1] [2]
+        //若是要取得陣列 當中的 「 值 」， 可以使用 「 for(value of dataSet) {…}」：
+        // for (let value of arr) {
+        //     console.log(`${value}`)
+        // }
+    </script>
+</body>
+
+</html>
