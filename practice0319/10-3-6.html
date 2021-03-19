@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let listOfName = ['Alex', 'Bill', 'Cook', 'Darren'];
+        //delete the first one 
+        listOfName.shift();
+        console.log(listOfName);
+
+        listOfName = ['Alex', 'Bill', 'Cook', 'Darren'];
+        let name = listOfName.pop();
+        listOfName.unshift(name);//將刪除的資料放到最前面
+        console.log(listOfName)
+    </script>
+</body>
+
+</html>
