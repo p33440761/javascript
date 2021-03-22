@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>indexOf</title>
+</head>
+
+<body>
+    <script>
+        let arr = ['Alex', 'Bill'];
+        let str = '人生好難'    //['人','生','好','難']
+
+        if (arr.indexOf('Bill') > -1) {
+            alert(`有找到 Bill`);
+        } else {
+            alert(`沒找到 Bill ...`);
+        }
+
+        if (str.indexOf('好') !== -1) {
+            alert(`有找到「好」`);
+        } else {
+            alert(`沒找到「好」 ...`);
+        }
+    </script>
+</body>
+
+</html>
