@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+</head>
+
+<body>
+    <script>
+        let Person = function (name) {
+            this.name = name;
+        }
+
+
+        //使用 prototype，為 Person 類別定義了方法 sayHello()
+        //共同的屬性或方法，不見得一定要在類別中定義
+        //也可以透過 prototype 來建立 Person '原型'的方法
+        //此方法為js原有的 效果跟this.name一樣
+        Person.prototype.sayHello = function () {
+            console.log("Hello, I'm " + this.name)
+        }
+
+        let person01 = new Person('Alex')
+        let person02 = new Person('Bill')
+
+        person01.sayHello();
+        person02.sayHello();
+    </script>
+</body>
+
+</html>

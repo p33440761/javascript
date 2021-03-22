@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>物件導向基礎概念</title>
+</head>
+
+<body>
+    <!-- new 的詳細解釋 -->
+    <!-- https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new -->
+    <script>
+        let Person = function (name) {
+            //增加屬性
+            this.firstName = name;
+            this.hands = 2;
+        }
+
+        let person01 = new Person('Alex');
+        let person02 = new Person('Bill');
+
+        console.log(person01.hands);
+        console.log(person01.firstName);
+        console.log(person02.firstName);
+    </script>
+</body>
+
+</html>

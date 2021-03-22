@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //不放let const var 就可以是全域函數
+        function test() {
+            var01 = 'A' //為全域函數
+
+            // 此為區域函數，外部找不到
+            // let var01 = 'A'
+            document.write('var01=' + var01 + '<br>');
+        }
+
+
+        //要呼叫此函式 下面才可以讀的到裡面的值
+        test();
+
+        var var02 = 'C'
+        // var01 = 'B' //改值
+
+        document.write('var01=' + var01 + '<br>')
+        document.write('var02=' + var02 + '<br>')
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" onclick="startcount()" id="btn_start">開始累加</button>
+    <input type="text" id="txt" value="">
+    <button type="button" onclick="stopcount()" id="btn_end">停止累加</button>
+
+    <script>
+        let countNum = 0;
+        let t;
+
+        function count() {
+            document.getElementById('txt').value = countNum;
+            countNum++;
+        }
+
+        function startcount() {
+            t = setInterval(function () {
+                count();
+            }, 1000)
+            //將開始按鈕設定為不可用
+            document.getElementById('btn_start').setAttribute('disabled', true);
+
+            //將結束鈕按移除不可用的屬性
+            document.getElementById('btn_end').removeAttribute('disabled');
+        }
+
+
+        function stopcount() {
+            clearInterval(t);
+            //將開始鈕按移除不可用的屬性
+            document.getElementById('btn_start').removeAttribute('disabled');
+
+            //將結束按鈕設定為不可用
+            document.getElementById('btn_end').setAttribute('disabled', true);
+        }
+
+
+
+    </script>
+</body>
+
+</html>
