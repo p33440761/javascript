@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            width: 500px;
+            height: 500px;
+            /* border: 1px solid red; */
+            border-radius: 50%;
+            background: radial-gradient(circle at center, red 20%, blue 40%, green 60%);
+        }
+
+        .circle {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            display: none;
+            width: 10px;
+            height: 10px;
+            background-color: gray;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap" id="wrap"></div>
+    <div class="circle" id="circle"></div>
+    <script>
+        let radius = 250;
+        let wrap = document.getElementById('wrap')
+        let circle = document.getElementById('circle')
+        let degree = 0;
+        let qty = 36;
+        let moveLength = 360 / qty
+        let t;
+        t = setInterval(function () {
+            draw();
+        }, 100)
+
+        function draw() {
+            if ((degree + moveLength) >= 360) {
+                clearInterval(t);
+            }
+
+            degree += moveLength;
+
+            let wrap_left = wrap.offsetLeft
+            let wrap_top = wrap.offsetTop
+
+            //計算小圓 x 的相對位置。element.style.left 需要填寫數值加 px 字串
+
+            let x = Math.cos(degree * (Math.PI / 180)) * radius;
+            //why plus radius
+            circle.style.left = (wrap_left + radius + x) + 'px';
+
+            var y = Math.sin(degree * (Math.PI / 180)) * radius;
+            circle.style.top = (wrap_top + radius - y) + "px";
+            circle.style.display = 'block';
+
+
+            // 複製新的一個元素物件，拷貝所有屬性和值
+            // cloneNode()接受一個可選值為true或false的參數。true表示克隆元素和它的所有子節點，false表示克隆元素但不包含它的子節點。
+
+            // cloneNode 建立節點
+            let newCircle = circle.cloneNode(true);
+            //appendChild 用cloneNode的節點去新增
+            document.body.appendChild(newCircle);
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
