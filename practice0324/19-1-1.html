@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button name="btn_get" id="btn_get">使用 GET 傳遞</button>
+    <br />
+    <button name="btn_post" id="btn_post">使用 POST 傳遞</button>
+    <br />
+    <button name="btn_ajax" id="btn_ajax">使用 Ajax 傳遞</button>
+
+    <div id="message"></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+
+        //https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/266210/
+        let div = document.querySelector('div#message')
+
+
+
+        //網址會帶有 HTML Form 表單的參數與資料。
+        //$.get 是jquery的方法
+        $(document).on('click', 'button#btn_get', function (objJson) {
+            $.get('https://httpbin.org/get', function (objJson) {
+                div.innerHTML = JSON.stringify(objJson);
+            })
+        })
+
+
+        //資料傳遞時，網址並不會改變。
+        //使用 POST 傳遞  重要的資訊用post 帳號密碼
+        //  會將值放進form
+        $(document).on('click', 'button#btn_post', function () {
+            $.post("https://httpbin.org/post ", { postMethod: "1" })
+                .done(function (objJson) {
+                    div.innerHTML = JSON.stringify(objJson);
+                });
+        });
+
+        //使用 Ajax 傳遞
+        $(document).on('click', 'button#btn_ajax', function () {
+            $.ajax({
+                method: 'POST', // GET
+                url: "https://httpbin.org/post",
+                data: {
+                    postMethod: "1"
+                }
+            }).done(function (objJson) {
+                div.innerHTML = JSON.stringify(objJson);
+            });
+        });
+    </script>
+</body>
+
+</html>

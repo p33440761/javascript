@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+
+        //https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/266210/
+        //https://pjchender.blogspot.com/2016/01/javascriptobjectjson.html
+        $(document).on('click', 'button', function () {
+            $.post('check.php', { username: $('username').val(), password: $('password').val() }, function (objJson) {
+                let obj = JSON.parse(objJson);
+                if (obj.success) {
+                    alert('成功')
+                }
+            })
+        })
+        //假設是{'success':true}
+    </script>
+</body>
+
+</html>
